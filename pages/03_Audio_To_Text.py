@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 import base64
-import json
+
 
 uploaded_file = st.file_uploader("Choose a file")
 
@@ -16,13 +16,9 @@ def encode_audio(audio):
 if uploaded_file is not None:
     # To read file as bytes:
     data = encode_audio(uploaded_file)
-    audio_bytes = uploaded_file.read()
+    audio_bytes = uploaded_file.getvalue()
     st.audio(audio_bytes, format='audio/mp3')
-
-
-    # bytes_data = uploaded_file.getvalue()
-    # st.write(data)
-    button = st.button("Translate")
+    button = st.button("Generate")
 
     if button:
         with st.spinner():
