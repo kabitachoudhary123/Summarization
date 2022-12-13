@@ -17,7 +17,7 @@ if uploaded_file is not None:
     # To read file as bytes:
     data = encode_audio(uploaded_file)
     audio_bytes = uploaded_file.read()
-    st.audio(audio_bytes, format='audio/mp3/flac')
+    st.audio(audio_bytes, format='audio/mp3')
 
 
     # bytes_data = uploaded_file.getvalue()
